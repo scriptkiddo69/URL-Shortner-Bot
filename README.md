@@ -17,8 +17,6 @@ pip3 install -r requirements.txt
 python3 main.py
 ```
 
-</details>
-
 ---
 
 ## Variables
@@ -35,6 +33,12 @@ python3 main.py
 - `GPLINKS_API` [GPLinks.in](https://gplinks.in) api from [gplinks.in/api](https://gplinks.in/api)
 - `POST_API` [Po.st](https://po.st) api
 - `OWLY_API` [Ow.ly](https://ow.ly) api
+
+---
+
+## Note
+
+> These are not my domains. So I don't know how your shorted link will work I can not guarantee that the link will not be redirected to the untrusted sites. So please short and share it your risk.
 
 ---
 
