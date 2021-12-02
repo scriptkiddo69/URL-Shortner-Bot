@@ -1,14 +1,9 @@
-# Made with python3
-# (C) @FayasNoushad
-# Copyright permission under MIT License
-# All rights reserved by FayasNoushad
-# License -> https://github.com/FayasNoushad/URL-Shortner-Bot/blob/main/LICENSE
-
 import os
 import aiohttp
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultArticle, InputTextMessageContent
 from pyshorteners import Shortener
+
 
 BITLY_API = os.environ.get("BITLY_API", None)
 CUTTLY_API = os.environ.get("CUTTLY_API", None)
@@ -18,10 +13,13 @@ POST_API = os.environ.get("POST_API", None)
 OWLY_API = os.environ.get("OWLY_API", None)
 
 BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton(text='⚙ Join Updates Channel ⚙', url='https://telegram.me/FayasNoushad')
-        ]]
-    )
+    [
+        [
+            InlineKeyboardButton(text='⚙ Join Updates Channel ⚙', url='https://telegram.me/FayasNoushad')
+        ]
+    ]
+)
+
 
 @Client.on_message(filters.private & filters.regex(r'https?://[^\s]+'))
 async def reply_shortens(bot, update):
@@ -37,6 +35,7 @@ async def reply_shortens(bot, update):
         reply_markup=BUTTONS,
         disable_web_page_preview=True
     )
+
 
 @Client.on_inline_query(filters.regex(r'https?://[^\s]+'))
 async def inline_short(bot, update):
@@ -57,6 +56,7 @@ async def inline_short(bot, update):
         inline_query_id=update.id,
         results=answers
     )
+
 
 async def short(link):
     shorten_urls = "**--Shorted URLs--**\n"
