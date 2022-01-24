@@ -15,7 +15,7 @@ OWLY_API = os.environ.get("OWLY_API", None)
 @Client.on_message(filters.private & filters.regex(r'https?://[^\s]+'))
 async def reply_shortens(bot, update):
     message = await update.reply_text(
-        text="`Analysing your link...`",
+        text="🎊",
         disable_web_page_preview=True,
         quote=True
     )
@@ -48,14 +48,14 @@ async def inline_short(bot, update):
 
 
 async def short(link):
-    shorten_urls = "**--Shorted URLs--**\n"
+    shorten_urls = "**⚙ Shortened URLs**\n"
     
     # Bit.ly shorten
     if BITLY_API:
         try:
             s = Shortener(api_key=BITLY_API)
             url = s.bitly.short(link)
-            shorten_urls += f"\n**Bit.ly :-** {url}"
+            shorten_urls += f"\n**BitLy -** {url}"
         except Exception as error:
             print(f"Bit.ly error :- {error}")
     
@@ -63,7 +63,7 @@ async def short(link):
     try:
         s = Shortener()
         url = s.tinyurl.short(link)
-        shorten_urls += f"\n**TinyURL.com :-** {url}"
+        shorten_urls += f"\n\n**TinyURL -** {url}"
     except Exception as error:
         print(f"TinyURL.com error :- {error}")
     
