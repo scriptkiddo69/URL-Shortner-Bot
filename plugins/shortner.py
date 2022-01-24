@@ -12,7 +12,7 @@ GPLINKS_API = os.environ.get("GPLINKS_API", None)
 POST_API = os.environ.get("POST_API", None)
 OWLY_API = os.environ.get("OWLY_API", None)
 
-@Client.on_message(filters.incoming & filters.regex(r'https?://[^\s]+'))
+@Client.on_message(filters.command(["short"]) & filters.regex(r'https?://[^\s]+'))
 async def reply_shortens(bot, update):
     message = await update.reply_text(
         text="🎊",
