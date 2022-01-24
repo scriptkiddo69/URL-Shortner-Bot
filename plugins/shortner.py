@@ -48,32 +48,16 @@ async def inline_short(bot, update):
 
 
 async def short(link):
-    shorten_urls = "**⚙ Shortened URLs**\n"
+    shorten_urls = "**YOUR LINK HAS BEEN SHORTENED SUCCESSFULLY 🎉**\n"
     
     # Bit.ly shorten
     if BITLY_API:
         try:
             s = Shortener(api_key=BITLY_API)
             url = s.bitly.short(link)
-            shorten_urls += f"\n**BitLy -** {url}"
+            shorten_urls += f"\n`{url}`"
         except Exception as error:
             print(f"Bit.ly error :- {error}")
-    
-    # Clck.ru shorten
-        try:
-            s = Shortener()
-            url = s.clckru.short(link)
-            shorten_urls += f"\n\n**Clck -** {url}"
-        except Exception as error:
-            print(f"Click.ru error :- {error}")
-    
-    # TinyURL.com shorten
-        try:
-            s = Shortener()
-            url = s.tinyurl.short(link)
-            shorten_urls += f"\n\n**TinyURL -** {url}"
-        except Exception as error:
-            print(f"TinyURL.com error :- {error}")
     
     # GPLinks shorten
     if GPLINKS_API:
@@ -90,7 +74,7 @@ async def short(link):
     
     # Send the text
     try:
-        shorten_urls += "\n\n**Made by @x69aadii**"
+        shorten_urls += "\n\n**(🌟 TAP LINK TO COPY 🌟)** \n\n Developed By x69aadii"
         return shorten_urls
     except Exception as error:
         return error
