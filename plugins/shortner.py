@@ -74,7 +74,7 @@ async def short(link):
     
     # Send the text
     try:
-        shorten_urls += "\n\n**(🌟 TAP LINK TO COPY 🌟)** \n\n Developed By x69aadii"
+        shorten_urls += "\n\n**🌟 TAP LINK TO COPY 🌟** \n\nDeveloped By x69aadii"
         return shorten_urls
     except Exception as error:
         return error
