@@ -5,9 +5,9 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 START_TEXT = """Hello {} 💎
 I am a link shortner telegram bot.
 
->> `Just send me any link & I'll shorten it Instantly`"""
+>> `Just send me any link & I'll shorten it Instantly`
 
-MADE WITH ❤️ IN 🇮🇳
+MADE WITH ❤️ IN 🇮🇳"""
 
 START_BUTTONS = InlineKeyboardMarkup(
     [
@@ -25,3 +25,4 @@ async def start(bot, update):
         disable_web_page_preview=True,
         quote=True
     )
+
