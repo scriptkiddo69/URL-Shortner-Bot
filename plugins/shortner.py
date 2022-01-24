@@ -59,13 +59,21 @@ async def short(link):
         except Exception as error:
             print(f"Bit.ly error :- {error}")
     
+    # Clck.ru shorten
+        try:
+            s = Shortener()
+            url = s.clckru.short(link)
+            shorten_urls += f"\n\n**Clck -** {url}"
+        except Exception as error:
+            print(f"Click.ru error :- {error}")
+    
     # TinyURL.com shorten
-    try:
-        s = Shortener()
-        url = s.tinyurl.short(link)
-        shorten_urls += f"\n\n**TinyURL -** {url}"
-    except Exception as error:
-        print(f"TinyURL.com error :- {error}")
+        try:
+            s = Shortener()
+            url = s.tinyurl.short(link)
+            shorten_urls += f"\n\n**TinyURL -** {url}"
+        except Exception as error:
+            print(f"TinyURL.com error :- {error}")
     
     # GPLinks shorten
     if GPLINKS_API:
