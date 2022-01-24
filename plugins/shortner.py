@@ -23,7 +23,6 @@ async def reply_shortens(bot, update):
     shorten_urls = await short(link)
     await message.edit_text(
         text=shorten_urls,
-        reply_markup=BUTTONS,
         disable_web_page_preview=True
     )
 
@@ -40,7 +39,6 @@ async def inline_short(bot, update):
                 message_text=shorten_urls,
                 disable_web_page_preview=True
             ),
-            reply_markup=BUTTONS
         )
     ]
     await bot.answer_inline_query(
